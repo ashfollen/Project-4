@@ -68,11 +68,25 @@
 
 .form-class {
   display: block;
-  margin: 20px;;
+  margin: 20px;
   padding: 10px;
 }
 
 .form-item-class {
+  margin: 10px;
+}
+
+.saved-pages-class {
+  display: inline-block;
+  overflow: auto;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: white;
+  border: 5px solid #71c9f1;
+  width: 450px;
+  height: 300px;
+  word-wrap: break-word;
   margin: 10px;
 }
 
