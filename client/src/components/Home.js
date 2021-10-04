@@ -7,9 +7,7 @@ export default function Home() {
     const [pageTitle, setPageTitle] = useState('')
     const [bodyText, setBodyText] = useState('')
     const [imageUrl, setImageUrl] = useState('')
-
     const [previewClass, setPreviewClass] = useState('light')
-
     const [chosenTheme, setChosenTheme] = useState({})
     const [themes, setThemes] = useState([])
 
@@ -20,8 +18,8 @@ export default function Home() {
       }, [])
 
       function handleThemeChange(e) {
-        setChosenTheme(e.target.value)
-     
+        setChosenTheme(e.target.value.id)
+        setPreviewClass(e.target.value.name)
       }
 
       function handleSubmit() {
@@ -52,9 +50,9 @@ export default function Home() {
                     <input className="form-class" type="text" placeholder="Add some body text..." value={bodyText} onChange={(e) => setBodyText(e.target.value)}/>
                     <input className="form-class" type="text" placeholder="Add an image URL..." value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>
 
-                    <label for="themes">Choose a theme: </label>
+                    <label htmlFor="themes">Choose a theme: </label>
                     <select name="themes" id="themes" onChange={handleThemeChange}>
-                        {themes.map(theme => <option value={theme.id}>{theme.name}</option>)}
+                        {themes.map(theme => <option value={theme}>{theme.name}</option>)}
                     </select>
                     <input className="form-class" type="submit" name="submit" value="Submit"/>
                 </form>
