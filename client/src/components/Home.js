@@ -8,18 +8,13 @@ export default function Home() {
     const [pageTitle, setPageTitle] = useState('')
     const [bodyText, setBodyText] = useState('')
     const [imageUrl, setImageUrl] = useState('')
-    const [ previewClass, setPreviewClass ] = useState('light')
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log(e.target.select.value);
-    }
+    const [previewClass, setPreviewClass] = useState('light')
 
     return (
         <div className="flex-container">
             <div className="form-div-class">
                 <h2 className="div-title">Build your page here!</h2>
-                <form onSubmit={(e) => handleSubmit(e)}>
+                <form>
                     <input className="form-class" type="text" placeholder="Add your page title..." value={pageTitle} onChange={(e) => setPageTitle(e.target.value)}/>
                     <input className="form-class" type="text" placeholder="Add some body text..." value={bodyText} onChange={(e) => setBodyText(e.target.value)}/>
                     <input className="form-class" type="text" placeholder="Add an image URL..." value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>
