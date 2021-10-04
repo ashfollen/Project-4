@@ -1,4 +1,3 @@
-import {useState} from 'react'
 
 export default function PagePreview({title, bodyText, image, previewClass}) {
     
@@ -7,6 +6,7 @@ export default function PagePreview({title, bodyText, image, previewClass}) {
         <div>
             <h2>Webpage Preview:</h2>
             <div className="page-preview-div-class">
+
                 <div className={previewClass}>
                     <h1>{title}</h1>
                     <p>{bodyText}</p>
