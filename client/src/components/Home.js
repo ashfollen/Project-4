@@ -17,8 +17,8 @@ export default function Home() {
       }, [])
 
       function handleThemeChange(e) {
-        setChosenTheme(e.target.value)
-        
+        setChosenTheme(e.target.value.id)
+
       }
 
       function handleSubmit() {
@@ -49,7 +49,7 @@ export default function Home() {
                     <input className="form-class" type="text" placeholder="Add an image URL..." value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>
                     <label for="themes">Choose a theme: </label>
                     <select name="themes" id="themes" onChange={handleThemeChange}>
-                        {themes.map(theme => <option value={theme.id}>{theme.name}</option>)}
+                        {themes.map(theme => <option value={theme}>{theme.name}</option>)}
                     </select>
                     <input className="form-class" type="submit" name="submit" value="Submit"/>
                 </form>
