@@ -76,3 +76,42 @@
   margin: 10px;
 }
 
+/* Page Preview Styling */
+.light body {
+
+}
+
+.dark body {
+ background-color: black;
+}
+
+.colorful body {
+  background-color: cyan;
+}
+
+.light h1 {
+  font: black;
+}
+
+.dark h1 {
+  font: white;
+}
+
+.colorful h1 {
+  font: magenta;
+}
+
+.light p {
+ font: black;
+}
+
+.dark p {
+  font: white;
+}
+
+.colorful p {
+  font: darkblue;
+}
+
+
+
