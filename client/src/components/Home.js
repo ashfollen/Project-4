@@ -7,7 +7,7 @@ export default function Home() {
     const [pageTitle, setPageTitle] = useState('')
     const [bodyText, setBodyText] = useState('')
     const [imageUrl, setImageUrl] = useState('')
-    const [previewClass, setPreviewClass] = useState('light')
+    const [previewClass, setPreviewClass] = useState('Light')
     const [chosenTheme, setChosenTheme] = useState({})
     const [themes, setThemes] = useState([])
 
