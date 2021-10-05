@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 .App {
   text-align: center;
 }
@@ -82,7 +83,6 @@
   word-wrap: break-word;
   margin: 10px;
 }
-/* Page Preview Styling */
 .Dark {
   background-color: black;
   color: white;
@@ -90,6 +90,7 @@
   height: 600px;
   padding: 0px;
 }
+
 .Dark p {
   color: lime;
   padding-top: 10px;
@@ -101,11 +102,13 @@
   height: 600px;
   padding: 0px;
 }
+
 .Light p {
   color: gray;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .Colorful {
   background-color: cyan;
   color: magenta;
@@ -113,8 +116,10 @@
   height: 600px;
   padding: 0px;
 }
+
 .Colorful p {
   color: darkblue;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
