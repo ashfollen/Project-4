@@ -1,5 +1,5 @@
 
-export default function CodePreview({title, bodyText, image}) {
+export default function CodePreview({title, bodyText, image, previewClass}) {
 
     return (
         <div>
@@ -10,7 +10,7 @@ export default function CodePreview({title, bodyText, image}) {
                     <br/>
                     {`<html>`}
                     <br/>
-                    {`<body>`}
+                    {`<body class="`}{previewClass}{`">`}
                     <br/>
                     {`<h1>`}{title}{`</h1>`}
                     <br/>

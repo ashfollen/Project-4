@@ -12,4 +12,14 @@ class PreviewPagesController < ApplicationController
             render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
     end
 
+    def destroy
+        previewPage = PreviewPage.find_by(id: params[:id])
+        if previewPage
+            previewPage.destroy
+            head :no_content
+        else
+            render json: { error: "Page not found" }, status: :not_found
+        end
+    end
+
 end

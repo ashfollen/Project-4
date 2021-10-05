@@ -6,7 +6,6 @@
 .App {
   text-align: center;
 }
-
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -16,15 +15,12 @@
   /* min-height: 500px; */
   margin: 10px;
 }
-
 .preview-image-class {
   max-width: 300px;
 }
-
 .div-title {
   margin-bottom: 40px;
 }
-
 .form-div-class {
   display: block;
   padding: 20px;
@@ -33,7 +29,6 @@
   width: 300px;
   height: 400px;
 }
-
 .page-preview-div-class {
   overflow: auto;
   display: block;
@@ -41,13 +36,12 @@
   /* padding-left: 20px; */
   /* padding-right: 20px; */
   /* background-color: white; */
-  border: 5px solid #71c9f1;
+  border: 5px solid #71C9F1;
   width: 450px;
   height: 300px;
   word-wrap: break-word;
   margin: 10px;
 }
-
 .code-preview-div-class {
   overflow: auto;
   display: block;
@@ -60,27 +54,22 @@
   word-wrap: break-word;
   text-align: left;
 }
-
 .navbar-container {
   background-color: pink;
   padding: 20px;
   margin: 10px;
 }
-
 .navbar-text {
   margin: 50px;
 }
-
 .form-class {
   display: block;
   margin: 20px;
   padding: 10px;
 }
-
 .form-item-class {
   margin: 10px;
 }
-
 .saved-pages-class {
   display: inline-block;
   overflow: auto;
@@ -88,15 +77,12 @@
   padding-left: 20px;
   padding-right: 20px;
   background-color: white; */
-  border: 5px solid #71c9f1;
+  border: 5px solid #71C9F1;
   width: 450px;
   height: 300px;
   word-wrap: break-word;
   margin: 10px;
 }
-
-/* Page Preview Styling */
-
 .Dark {
   background-color: black;
   color: white;
@@ -110,7 +96,6 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
 .Light {
   background-color: white;
   width: 450px;
@@ -137,8 +122,4 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
-
-
-
 

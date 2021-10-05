@@ -23,11 +23,9 @@ function App() {
         </nav> 
         <Switch>
           <Route exact path="/pages">
-            <h1>pages pagee</h1>
             <Pages/>
           </Route>
           <Route exact path="/">
-            <h1>hi home</h1>
             <Home/>
           </Route>
         </Switch> 
