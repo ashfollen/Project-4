@@ -13,8 +13,8 @@ PreviewPage.destroy_all
 puts
 
 puts "Seeding Themes..."
-theme1 = Theme.create(name: "Dark")
-theme2 = Theme.create(name: "Light")
+theme1 = Theme.create(name: "Light")
+theme2 = Theme.create(name: "Dark")
 theme3 = Theme.create(name: "Colorful")
 
 puts

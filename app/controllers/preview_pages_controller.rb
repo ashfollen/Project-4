@@ -2,7 +2,7 @@ class PreviewPagesController < ApplicationController
 
     def index
         previews = PreviewPage.all
-        render json: previews
+        render json: previews, include: :theme
     end
     
     def create
@@ -10,6 +10,16 @@ class PreviewPagesController < ApplicationController
         render json: previewPage, status: :created
         rescue ActiveRecord::RecordInvalid => e
             render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
+    end
+
+    def destroy
+        previewPage = PreviewPage.find_by(id: params[:id])
+        if previewPage
+            previewPage.destroy
+            head :no_content
+        else
+            render json: { error: "Page not found" }, status: :not_found
+        end
     end
 
 end

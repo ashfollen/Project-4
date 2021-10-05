@@ -5,6 +5,20 @@ export default function Pages() {
 
     const [savedPages, setSavedPages] = useState([])
 
+    function deletePage(id) {
+        
+            fetch(`/preview_pages/${id}`, {
+            method: "DELETE",
+            }).then((r) => {
+            if (r.ok) {
+                setSavedPages((pages) =>
+                pages.filter((page) => page.id !== id)
+                );
+            }
+            });
+       
+    }
+
     useEffect(() => {
         fetch("/preview_pages")
         .then((r) => r.json())
@@ -16,7 +30,7 @@ export default function Pages() {
     return (
         <div>
             <h1>Saved Pages:</h1>
-            {savedPages.map(page => <SavedPagesDisplay key={page.id} page={page} />)}
+            {savedPages.map(page => <SavedPagesDisplay key={page.id} deletePage={deletePage} page={page} />)}
         </div>
     )
 
