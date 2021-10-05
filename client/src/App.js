@@ -1,9 +1,19 @@
 import { Route, BrowserRouter as Router, Switch, NavLink } from "react-router-dom"
+import {useState} from 'react'
 import './App.css';
 import Home from "./components/Home"
 import Pages from "./components/Pages"
 
 function App() {
+  // const [previewClass, setPreviewClass] = useState('light')
+
+  // function updateClass(id) {
+  //   console.log('hi')
+  //   fetch(`/themes/${id}`)
+  //       .then((r) => r.json())
+  //       .then((data) => setPreviewClass(data.name))
+  // }
+
   return (
     <div className="App">
       <Router>

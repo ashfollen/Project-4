@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import PagePreview from './PagePreview'
 import CodePreview from './CodePreview'
 
-export default function Home() {
+export default function Home () {
 
     const [pageTitle, setPageTitle] = useState('')
     const [bodyText, setBodyText] = useState('')
@@ -18,8 +18,11 @@ export default function Home() {
       }, [])
 
       function handleThemeChange(e) {
-        setChosenTheme(e.target.value.id)
-        setPreviewClass(e.target.value.name)
+        setChosenTheme(e.target.value.id);
+        fetch(`/themes/${e.target.value}`)
+        .then((r) => r.json())
+        .then((data) => setPreviewClass(data.name))
+        // updateClass(e.target.value)
       }
 
       function handleSubmit() {
@@ -51,8 +54,8 @@ export default function Home() {
                     <input className="form-class" type="text" placeholder="Add an image URL..." value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>
 
                     <label htmlFor="themes">Choose a theme: </label>
-                    <select name="themes" id="themes" onChange={handleThemeChange}>
-                        {themes.map(theme => <option value={theme}>{theme.name}</option>)}
+                    <select name="themes" id="themes" value={previewClass} onChange={(e) => handleThemeChange(e)}>
+                        {themes.map(theme => <option key={theme.id} value={theme.id}>{theme.name}</option>)}
                     </select>
                     <input className="form-class" type="submit" name="submit" value="Submit"/>
                 </form>
