@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import PagePreview from './PagePreview'
 import CodePreview from './CodePreview'
 
-export default function Home () {
+export default function Home() {
 
     const [pageTitle, setPageTitle] = useState('')
     const [bodyText, setBodyText] = useState('')
@@ -18,7 +18,7 @@ export default function Home () {
       }, [])
 
       function handleThemeChange(e) {
-        setChosenTheme(e.target.value.id);
+        setChosenTheme(e.target.value);
         fetch(`/themes/${e.target.value}`)
         .then((r) => r.json())
         .then((data) => setPreviewClass(data.name))
