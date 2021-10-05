@@ -2,7 +2,7 @@ class PreviewPagesController < ApplicationController
 
     def index
         previews = PreviewPage.all
-        render json: previews
+        render json: previews, include: :theme
     end
     
     def create

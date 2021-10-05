@@ -54,7 +54,7 @@ export default function Home() {
                     <input className="form-class" type="text" placeholder="Add an image URL..." value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>
 
                     <label htmlFor="themes">Choose a theme: </label>
-                    <select name="themes" id="themes" value={previewClass} onChange={(e) => handleThemeChange(e)}>
+                    <select name="themes" id="themes" onChange={(e) => handleThemeChange(e)}>
                         {themes.map(theme => <option key={theme.id} value={theme.id}>{theme.name}</option>)}
                     </select>
                     <input className="form-class" type="submit" name="submit" value="Submit"/>
