@@ -107,6 +107,8 @@
 
 .Dark p {
   color: lime;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .Light {
@@ -118,6 +120,8 @@
 
 .Light p {
   color: gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .Colorful {
@@ -130,6 +134,8 @@
 
 .Colorful p {
   color: darkblue;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
