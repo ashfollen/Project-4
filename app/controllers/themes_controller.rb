@@ -2,7 +2,7 @@ class ThemesController < ApplicationController
 
     def index
         themes = Theme.all
-        render json: themes
+        render json: themes 
     end 
 
     def show 
