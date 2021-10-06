@@ -44,7 +44,7 @@
 }
 .code-preview-div-class {
   overflow: auto;
-  display: block;
+  display: inline-block;
   padding: 20px;
   background-color: black;
   color: rgb(0, 209, 0);

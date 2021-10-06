@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :preview_pages, only: [:index, :show, :destroy, :create]
+  resources :preview_pages, only: [:index, :show, :destroy, :create, :update]
   resources :themes, only: [:index, :show]
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

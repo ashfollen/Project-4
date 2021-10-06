@@ -1,6 +1,6 @@
 
 
-export default function SavedPageCode({page}) {
+export default function SavedPageCode({page, currentTheme}) {
 
     return (
         <div className="code-preview-div-class">
@@ -9,7 +9,7 @@ export default function SavedPageCode({page}) {
             <br/>
             {`<html>`}
             <br/>
-            {`<body class="`}{`">`}
+            {`<body class="`}{currentTheme}{`">`}
             <br/>
             {`<h1>`}{page.title}{`</h1>`}
             <br/>

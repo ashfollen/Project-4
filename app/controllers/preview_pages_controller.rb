@@ -22,4 +22,14 @@ class PreviewPagesController < ApplicationController
         end
     end
 
+    def update
+        previewPage = PreviewPage.find_by(id: params[:id])
+        if previewPage
+          previewPage.update(theme_id: params[:theme_id])
+          render json: previewPage
+        else
+          render json: { error: "Page not found" }, status: :not_found
+        end
+      end
+
 end

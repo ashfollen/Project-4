@@ -8,17 +8,20 @@ export default function Home() {
     const [previewClass, setPreviewClass] = useState('Light')
     const [chosenTheme, setChosenTheme] = useState({})
     const [themes, setThemes] = useState([])
+
     useEffect(() => {
         fetch("/themes")
         .then((r) => r.json())
         .then((data) => setThemes(data));
       }, [])
+
       function handleThemeChange(e) {
         setChosenTheme(e.target.value);
         fetch(`/themes/${e.target.value}`)
         .then((r) => r.json())
         .then((data) => setPreviewClass(data.name))
       }
+
       function handleSubmit() {
         fetch("/preview_pages", {
             method: "POST",
@@ -36,6 +39,7 @@ export default function Home() {
             .then((r) => r.json())
             .then(data => console.log("submitted"));
       }
+      
     return (
         <div className="flex-container">
             <div className="form-div-class">
