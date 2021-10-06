@@ -56,7 +56,7 @@ export default function SavedPagesDisplay({page, deletePage}) {
 
     return (
         <>
-            <div onClick={toggle}>
+            <div className="saved-page-layout-individual" onClick={toggle}>
                 {toggleCodePage ? 
                 <SavedPagePreview currentTheme={currentTheme} page={page}/> :
                 <SavedPageCode page={page} currentTheme={currentTheme}/>

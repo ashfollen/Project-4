@@ -18,20 +18,6 @@ export default function Pages() {
        
     }
 
-    // function saveEdit(id, newTheme) {
-    //     fetch(`/preview_pages/${id}`, {
-    //         method: "PATCH",
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //           theme_id: `${newTheme}`
-    //         }),
-    //       })
-    //         .then((r) => r.json())
-    //         .then(data => console.log(data));
-    // }
-
     function setPages() {
         fetch("/preview_pages")
         .then((r) => r.json())
@@ -49,7 +35,9 @@ export default function Pages() {
     return (
         <div>
             <h1>Saved Pages:</h1>
-            {savedPages.map(page => <SavedPagesDisplay key={page.id} setPages={setPages} deletePage={deletePage} page={page} />)}
+            <div className="saved-pages-layout">
+                {savedPages.map(page => <SavedPagesDisplay key={page.id} deletePage={deletePage} page={page} />)}
+            </div>
         </div>
     )
 
