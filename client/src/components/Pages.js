@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 import SavedPagesDisplay from './SavedPagesDisplay'
 
-export default function Pages() {
+export default function Pages({currentUser}) {
 
     const [savedPages, setSavedPages] = useState([])
+
+    useEffect(() => {
+        setSavedPages(currentUser.preview_pages)
+      }, [])
+
+      console.log(currentUser.preview_pages)
 
     function deletePage(id) {
         
@@ -18,17 +24,11 @@ export default function Pages() {
        
     }
 
-    function setPages() {
-        fetch("/preview_pages")
-        .then((r) => r.json())
-        .then((data) => setSavedPages(data));
-    }
-
-    useEffect(() => {
-        fetch("/preview_pages")
-        .then((r) => r.json())
-        .then((data) => setSavedPages(data));
-      }, [])
+    // useEffect(() => {
+    //     fetch("/preview_pages")
+    //     .then((r) => r.json())
+    //     .then((data) => setSavedPages(data));
+    //   }, [])
 
       console.log(savedPages)
 

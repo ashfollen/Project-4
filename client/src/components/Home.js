@@ -2,7 +2,9 @@ import {useState, useEffect} from 'react'
 import PagePreview from './PagePreview'
 import HTMLPreview from './HTMLPreview'
 import CSSPreview from './CSSPreview'
-export default function Home() {
+
+export default function Home({currentUser, onLogout}) {
+
     const [pageTitle, setPageTitle] = useState('')
     const [bodyText, setBodyText] = useState('')
     const [imageUrl, setImageUrl] = useState('')
@@ -10,11 +12,20 @@ export default function Home() {
     const [chosenTheme, setChosenTheme] = useState({})
     const [themes, setThemes] = useState([])
 
+    console.log(currentUser.username)
+
     useEffect(() => {
         fetch("/themes")
         .then((r) => r.json())
         .then((data) => setThemes(data));
       }, [])
+
+      function handleLogout(e) {
+          e.preventDefault()
+        fetch("/logout", {
+          method: "DELETE",
+        }).then(() => onLogout());
+    }
 
       function handleThemeChange(e) {
         setChosenTheme(e.target.value);
@@ -23,7 +34,8 @@ export default function Home() {
         .then((data) => setPreviewClass(data.name))
       }
 
-      function handleSubmit() {
+      function handleSubmit(e) {
+        // e.preventDefault()
         fetch("/preview_pages", {
             method: "POST",
             headers: {
@@ -34,11 +46,12 @@ export default function Home() {
               code: "placeholder code",
               body_text: `${bodyText}`,
               theme_id: `${chosenTheme}`,
-              image_url: `${imageUrl}`
+              image_url: `${imageUrl}`,
+              user_id: `${currentUser.id}`
             }),
           })
             .then((r) => r.json())
-            .then(data => console.log("submitted"));
+            .then(data => console.log(data));
       }
 
     return (
@@ -47,7 +60,7 @@ export default function Home() {
         <div className="flex-container">
             <div className="form-div-class">
                 <h2 className="div-title">Build your page here!</h2>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={(e) => handleSubmit(e)}>
                     <input className="form-class" type="text" placeholder="Add your page title..." value={pageTitle} onChange={(e) => setPageTitle(e.target.value)}/>
                     <input className="form-class" type="text" placeholder="Add some body text..." value={bodyText} onChange={(e) => setBodyText(e.target.value)}/>
                     <input className="form-class" type="text" placeholder="Add an image URL..." value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>
@@ -57,6 +70,7 @@ export default function Home() {
                     </select>
                     <input className="form-class" type="submit" name="submit" value="Submit"/>
                 </form>
+                <button onClick={handleLogout}>Logout</button>
             </div>
             <PagePreview title={pageTitle} bodyText={bodyText} image={imageUrl} previewClass={previewClass}/>
             <HTMLPreview previewClass={previewClass} title={pageTitle} bodyText={bodyText} image={imageUrl}/>
