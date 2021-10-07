@@ -33,8 +33,8 @@ export default function Pages({currentUser}) {
       console.log(savedPages)
 
     return (
-        <div>
-            <h1>Saved Pages:</h1>
+        <div className="main">
+            <h1 className="header">SAVED PAGES</h1>
             <div className="saved-pages-layout">
                 {savedPages.map(page => <SavedPagesDisplay key={page.id} deletePage={deletePage} page={page} />)}
             </div>

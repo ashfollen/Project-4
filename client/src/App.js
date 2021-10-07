@@ -39,8 +39,8 @@ function App() {
     {loggedIn ? 
       <Router>
         <nav className="navbar-container">
-          <NavLink  className="navbar-text" to="/"> Home</NavLink>
-          <NavLink className="navbar-text" to="/pages"> Pages</NavLink>
+          <NavLink  className="navbar-text" to="/"> BUILD </NavLink>
+          <NavLink className="navbar-text" to="/pages"> PAGES </NavLink>
         </nav> 
         <Switch>
           <Route exact path="/pages">
