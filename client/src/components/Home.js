@@ -42,6 +42,8 @@ export default function Home() {
       }
 
     return (
+      <div className="main">
+        <h1 className="header">BUILD A PAGE </h1>
         <div className="flex-container">
             <div className="form-div-class">
                 <h2 className="div-title">Build your page here!</h2>
@@ -60,5 +62,6 @@ export default function Home() {
             <HTMLPreview previewClass={previewClass} title={pageTitle} bodyText={bodyText} image={imageUrl}/>
             <CSSPreview previewClass={previewClass}/>
         </div>
+      </div>
     )
-}
+  }

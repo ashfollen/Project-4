@@ -55,14 +55,14 @@ export default function SavedPagesDisplay({page, deletePage}) {
     }
 
     return (
-        <>
+        <div className="preview-and-buttons">
             <div className="saved-page-layout-individual" onClick={toggle}>
                 {toggleCodePage ? 
                 <SavedPagePreview currentTheme={currentTheme} page={page}/> :
                 <SavedPageCode page={page} currentTheme={currentTheme}/>
                 }
             </div>
-            <div>
+            <div className="buttons">
                 <button onClick={handleDeleteClick}>Delete Page</button>
                 <button onClick={handleEditClick}>Change Theme</button>
                 {openDropdown ? 
@@ -72,7 +72,7 @@ export default function SavedPagesDisplay({page, deletePage}) {
                 </select> : ''
                 }
             </div>
-        </>
+        </div>
     )
 
 }
