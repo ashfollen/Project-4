@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import PagePreview from './PagePreview'
-import CodePreview from './CodePreview'
+import HTMLPreview from './HTMLPreview'
+import CSSPreview from './CSSPreview'
 export default function Home() {
     const [pageTitle, setPageTitle] = useState('')
     const [bodyText, setBodyText] = useState('')
@@ -39,7 +40,7 @@ export default function Home() {
             .then((r) => r.json())
             .then(data => console.log("submitted"));
       }
-      
+
     return (
         <div className="flex-container">
             <div className="form-div-class">
@@ -56,7 +57,8 @@ export default function Home() {
                 </form>
             </div>
             <PagePreview title={pageTitle} bodyText={bodyText} image={imageUrl} previewClass={previewClass}/>
-            <CodePreview title={pageTitle} bodyText={bodyText} image={imageUrl}/>
+            <HTMLPreview previewClass={previewClass} title={pageTitle} bodyText={bodyText} image={imageUrl}/>
+            <CSSPreview previewClass={previewClass}/>
         </div>
     )
 }

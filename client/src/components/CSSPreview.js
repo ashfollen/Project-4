@@ -1,49 +1,12 @@
 
-
-export default function SavedPageCode({page, currentTheme}) {
+export default function CSSPreview({previewClass}) {
 
     return (
-        <div className="code-preview-div-class">
-        <p>
-            ******************************************************
-            <br/>
-            HTML CODE
-            <br/> 
-            ******************************************************
-            <br/>
-            <br/>
-            {`<!DOCTYPE html>`}
-            <br/>
-            {`<head>`}
-            <br/>
-            {`<link rel="stylesheet" typle="text/css" href="index.css">`}
-            <br/>
-            {`</head>`}
-            <br/>
-            {`<html>`}
-            <br/>
-            {`<body>`}
-            <br/>
-            {`<h1>`}{page.title}{`</h1>`}
-            <br/>
-            {`<p>`}{page.body_text}{`</p>`}
-            <br/>
-            {`<img src="`}{page.image_url}{`"/>`}
-            <br/>
-            {`</body>`}
-            <br/>
-            {`</html>`}
-            <br/>
-            <br/>
-            ******************************************************
-            <br/>
-            CSS CODE 
-            <br/>
-            ******************************************************
-            <br/>
-            <br/>
-            {currentTheme == "Light" ? 
-                <>
+        <div>
+            <h2>CSS Preview:</h2>
+            <div className="code-preview-div-class">
+                {previewClass == "Light" ? 
+                <p>
                     body {`{`}
                     <br/>
                     text-align: center;
@@ -69,8 +32,8 @@ export default function SavedPageCode({page, currentTheme}) {
                     max-width: 600px;
                     <br/>
                     {`}`}
-                 </> : currentTheme == "Dark" ? 
-                <>
+                </p> : previewClass == "Dark" ? 
+                <p>
                     body {`{`}
                     <br/>
                     text-align: center;
@@ -98,8 +61,8 @@ export default function SavedPageCode({page, currentTheme}) {
                     max-width: 600px;
                     <br/>
                     {`}`}
-                </> : currentTheme == "Colorful" ?
-                <>
+                </p> : previewClass == "Colorful" ?
+                <p>
                     body {`{`}
                     <br/>
                     text-align: center;
@@ -127,8 +90,8 @@ export default function SavedPageCode({page, currentTheme}) {
                     max-width: 600px;
                     <br/>
                     {`}`}
-                </> : ''}  
-            </p>
+                </p> : ''} 
+            </div>
         </div>
     )
 

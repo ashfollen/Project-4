@@ -1,12 +1,18 @@
 
-export default function CodePreview({title, bodyText, image, previewClass}) {
+export default function HTMLPreview({title, bodyText, image, previewClass}) {
 
     return (
         <div>
-            <h2>Code Preview:</h2>
+            <h2>HTML Preview:</h2>
             <div className="code-preview-div-class">
                 <p>
                     {`<!DOCTYPE html>`}
+                    <br/>
+                    {`<head>`}
+                    <br/>
+                    {`<link rel="stylesheet" typle="text/css" href="index.css">`}
+                    <br/>
+                    {`</head>`}
                     <br/>
                     {`<html>`}
                     <br/>
