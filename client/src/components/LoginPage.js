@@ -19,14 +19,19 @@ export default function LoginPage({setUser}) {
       }
     
     return (
-        <div>
+        <div className="login-page">
             <form onSubmit={handleSubmit}>
+                <section>
                 <input
+                    placeholder="username"
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
+                </section>
+                <section>
                 <button type="submit">Login</button>
+                </section>
             </form>
         </div>
     )

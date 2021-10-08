@@ -20,12 +20,12 @@ export default function Home({currentUser, onLogout}) {
         .then((data) => setThemes(data));
       }, [])
 
-      function handleLogout(e) {
-          e.preventDefault()
-        fetch("/logout", {
-          method: "DELETE",
-        }).then(() => onLogout());
-    }
+    //   function handleLogout(e) {
+    //       e.preventDefault()
+    //     fetch("/logout", {
+    //       method: "DELETE",
+    //     }).then(() => onLogout());
+    // }
 
       function handleThemeChange(e) {
         setChosenTheme(e.target.value);
@@ -58,6 +58,17 @@ export default function Home({currentUser, onLogout}) {
       <div className="main">
         <h1 className="header">BUILD A PAGE </h1>
         <div className="flex-container">
+            <div className="steps-class">
+                <h2>Steps to create this page as a file on your computer:</h2>
+                <ol>
+                    <li>Create a new folder with a name of your choosing</li>
+                    <li>Create a file within that folder called "index.html"</li>
+                    <li>Paste the code from the HTML preview below into your "index.html" file</li>
+                    <li>Create a second file within your folder called "index.css"</li>
+                    <li>Paste the code from the CSS preview below into your "index.css" file</li>
+                    <li>Save all changes and open index.html in your browser to view</li>
+                </ol>
+            </div>
             <div className="form-div-class">
                 <h2 className="div-title">Build your page here!</h2>
                 <form onSubmit={(e) => handleSubmit(e)}>
@@ -70,11 +81,11 @@ export default function Home({currentUser, onLogout}) {
                     </select>
                     <input className="form-class" type="submit" name="submit" value="Submit"/>
                 </form>
-                <button onClick={handleLogout}>Logout</button>
             </div>
             <PagePreview title={pageTitle} bodyText={bodyText} image={imageUrl} previewClass={previewClass}/>
             <HTMLPreview previewClass={previewClass} title={pageTitle} bodyText={bodyText} image={imageUrl}/>
             <CSSPreview previewClass={previewClass}/>
+
         </div>
       </div>
     )

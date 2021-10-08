@@ -33,21 +33,29 @@ function App() {
 
   }
 
+  function handleLogout(e) {
+    e.preventDefault()
+    fetch("/logout", {
+    method: "DELETE",
+    }).then(() => onLogout());
+  }
+
   return (
 
     <div className="App">
     {loggedIn ? 
       <Router>
         <nav className="navbar-container">
+          <h2>Welcome, {currentUser.username}!</h2>
           <NavLink  className="navbar-text" to="/"> BUILD </NavLink>
           <NavLink className="navbar-text" to="/pages"> PAGES </NavLink>
+          <button onClick={handleLogout}>Logout</button>
         </nav> 
         <Switch>
           <Route exact path="/pages">
             <Pages currentUser={currentUser}/>
           </Route>
           <Route exact path="/">
-            <h2>Welcome, {currentUser.username}!</h2>
             <Home onLogout={onLogout} currentUser={currentUser}/>
           </Route>
         </Switch> 

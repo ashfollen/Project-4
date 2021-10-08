@@ -66,7 +66,7 @@ export default function SavedPagesDisplay({page, deletePage}) {
                 <button onClick={handleDeleteClick}>Delete Page</button>
                 <button onClick={handleEditClick}>Change Theme</button>
                 {openDropdown ? 
-                <select name="themes" id="themes" onChange={(e) => handleThemeChange(e)}>
+                <select className="dropdown-saved" name="themes" id="themes" onChange={(e) => handleThemeChange(e)}>
                     {themes.map(theme => <option key={theme.id} value={theme.id}>{theme.name}</option>)
                     }
                 </select> : ''

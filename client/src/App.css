@@ -1,7 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
+
+.login-page {
+  height: 100%;
+  padding: 20px;
+  margin: auto;
+  color: rgb(59, 59, 59);
+  background: rgb(255,252,250);
+  background: radial-gradient(circle, rgba(255,252,250,1) 0%, rgba(144,177,119,1) 100%);
+}
+
+.tab { 
+  margin-left: 20px; 
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -12,9 +29,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 50px;
-  /* min-height: 500px; */
-  margin: 10px;
 }
 .preview-image-class {
   max-width: 300px;
@@ -23,71 +37,92 @@
   margin-bottom: 40px;
 }
 .form-div-class {
+  border-radius: 25px;
+  color: rgb(59, 59, 59);
   display: block;
   padding: 20px;
-  background-color: #44540c;
-  margin: 10px;
+  background: rgb(255,252,250);
+  background: radial-gradient(circle, rgba(255,252,250,1) 0%, rgba(144,177,119,1) 100%);
+  margin: 30px;
   width: 300px;
   height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .page-preview-div-class {
   overflow: auto;
   display: block;
-  /* padding-bottom: 30px; */
-  /* padding-left: 20px; */
-  /* padding-right: 20px; */
-  /* background-color: white; */
-  border: 5px solid #444444;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 450px;
   height: 300px;
   word-wrap: break-word;
   margin: 10px;
 }
 .code-preview-div-class {
+  padding: 20px;
   overflow: auto;
-  /* display: block; */
-  /* padding: 20px; */
-  background-color: black;
-  border: 5px solid #444444;
-  color: #bdea43;
+  background-color: #444444;
+  color: rgba(144,177,119,1);
   width: 450px;
   height: 300px;
   word-wrap: break-word;
   text-align: left;
   margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .code-preview-div-class p {
-  padding: 20px;
+  font-weight: bold;
 }
 .navbar-container {
-  background-color: #444444;
+  background-color: #5e5d5d;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100vh;
+  height: 200vh;
   width: 15%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.navbar-container h2 {
+  padding: 30px;
+  color: white;
+}
+
 a {
+  border-radius: 25px;
+  padding: 20px;
+  color: rgb(59, 59, 59);
+  background: radial-gradient(circle, rgba(255,252,250,1) 0%, rgba(144,177,119,1) 100%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-decoration: none;
   margin: 40px;
   margin-top: 50px;
-  color: white;
+  font-weight: bold;
 }
-a:visited {
-  color: white;
+
+.steps-class {
+  margin: 30px 30px 0px 30px;
+  text-align: left;
 }
-.navbar-text {
-  /* margin: 10px; */
-  /* padding: 50px; */
+
+.steps-class h2 {
+  padding: 10px;
 }
+
+.steps-class li {
+  padding: 10px;
+  text-align: left;
+}
+
 .header {
+  margin-bottom: 30px;
   height: 80px;
-  width: 85%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #b4b4b4;
+  background-color: #888888;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 h1.header {
   color: white;
@@ -104,20 +139,15 @@ h1.header {
   margin: 10px;
 }
 .saved-pages-class {
-  /* display: inline-block; */
   overflow: auto;
-  /* padding-bottom: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: white; */
-  border: 5px solid #444444;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 450px;
   height: 300px;
   word-wrap: break-word;
   margin: 10px;
 }
 .Dark {
-  background-color: black;
+  background-color: rgb(22, 22, 22);
   color: white;
   width: 450px;
   height: 600px;
@@ -140,8 +170,8 @@ h1.header {
   padding-bottom: 10px;
 }
 .Colorful {
-  background-image: url("https://archziner.com/wp-content/uploads/2021/02/diagonal-lines-in-the-colors-of-the-rainbow-cute-colorful-wallpaper-red-prange-yellow-green-blue-purple.jpg");
-  background-color: cyan;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   color: white;
   width: 450px;
   height: 600px;
@@ -154,21 +184,27 @@ h1.header {
 }
 
 .saved-pages-layout {
+  padding: 20px;
+  margin: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 85%;
+  width: 95%;
 }
 
 .saved-page-layout-individual {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 .buttons {
   display: flex;
   justify-content: space-evenly;
+}
+
+.dropdown-saved {
+  margin: auto;
+  margin-top: 48px;
 }
 
 button {
@@ -177,11 +213,13 @@ button {
   color: white;
   font-size: 1em;
   padding: 5px 10px;
+  margin: auto;
+  margin-top: 40px;
   width: 134px;
 }
 
 button:hover {
-  background-color: white;
-  color: #444444;
+  background-color: rgb(194, 194, 194);
+  color: #2b2b2b;
 }
 
